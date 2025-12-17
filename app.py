@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import joblib
 import tensorflow as tf
-import keras
+from tensorflow import keras # Gunakan keras dari tensorflow agar sinkron
 import json
 import matplotlib.pyplot as plt
 from sklearn.metrics import mean_absolute_percentage_error, mean_squared_error
@@ -14,38 +14,34 @@ from sklearn.metrics import mean_absolute_percentage_error, mean_squared_error
 # =========================================================
 st.set_page_config(layout="wide", page_title="Dashboard TA - Forecasting WTI")
 
-# Mengizinkan deserialization
-keras.config.enable_unsafe_deserialization()
+# PINDAHKAN KE SINI: Jalankan konfigurasi di tingkat global/paling atas
+try:
+    tf.keras.config.enable_unsafe_deserialization()
+except AttributeError:
+    # Untuk versi TF yang lebih lama jika method di atas tidak ada
+    pass
 
 @st.cache_resource
 def load_resources():
     """Load model, scalers, dan parameter konfigurasi."""
     try:
         # Load Window Size
-        window_size = 30 # Default fallback
+        window_size = 30 
         if os.path.exists('best_params_case_4.json'):
             with open('best_params_case_4.json', 'r') as f:
                 params = json.load(f)
             window_size = params.get('sliding_window', 30)
             
-        # Load Model
+        # Load Model dengan parameter tambahan
         if os.path.exists('best_model_case_4.h5'):
-            model = tf.keras.models.load_model("best_model_case_4.h5", compile=False, safe_mode=False)
+            # TAMBAHKAN safe_mode=False di sini
+            model = tf.keras.models.load_model(
+                "best_model_case_4.h5", 
+                compile=False, 
+                safe_mode=False
+            )
         else:
             return None, None, None, None
-
-        # Load Scalers
-        if os.path.exists('scaler_X_case_4.pkl') and os.path.exists('scaler_y_case_4.pkl'):
-            scaler_X = joblib.load("scaler_X_case_4.pkl")
-            scaler_y = joblib.load("scaler_y_case_4.pkl")
-        else:
-            return None, None, None, None
-
-        return model, scaler_X, scaler_y, window_size
-        
-    except Exception as e:
-        st.error(f"System Error saat Load Resources: {e}")
-        return None, None, None, None
 
 model, scaler_X, scaler_y, window_size = load_resources()
 
@@ -286,3 +282,4 @@ elif menu == "Forecasting WTI":
                 mime="text/csv"
 
             )
+
