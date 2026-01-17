@@ -12,6 +12,18 @@ from sklearn.metrics import mean_absolute_percentage_error, mean_squared_error
 # =========================================================
 # 1. CONFIG & SECURITY FIX
 # =========================================================
+import streamlit as st
+
+st.set_page_config(
+    page_title="Dashboard Forecasting Harga Minyak WTI",
+    page_icon="📊",
+    menu_items={
+        'Get Help': None,
+        'Report a bug': None,
+        'About': "Dashboard ini merupakan bagian dari Tugas Akhir untuk peramalan harga minyak."
+    }
+)
+
 st.set_page_config(layout="wide", page_title="Dashboard TA - Forecasting WTI")
 
 # Mengizinkan pemuatan Lambda layers (Solusi Error Deserialization)
@@ -296,5 +308,6 @@ elif menu == "Forecasting WTI":
                 mime="text/csv"
 
             )
+
 
 
