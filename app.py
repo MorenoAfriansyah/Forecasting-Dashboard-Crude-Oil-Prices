@@ -22,6 +22,8 @@ st.set_page_config(
     }
 )
 
+st.set_page_config(layout="wide", page_title="Dashboard TA - Forecasting WTI")
+
 # Mengizinkan pemuatan Lambda layers (Solusi Error Deserialization)
 try:
     keras.config.enable_unsafe_deserialization()
@@ -304,6 +306,7 @@ elif menu == "Forecasting WTI":
                 mime="text/csv"
 
             )
+
 
 
 
