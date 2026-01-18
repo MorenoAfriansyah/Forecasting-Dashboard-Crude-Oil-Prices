@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WTI Oil Price Forecast Dashboard</title>
+
+  <!-- Open Graph (LinkedIn Preview) -->
+  <meta property="og:title" content="WTI Oil Price Forecast Dashboard" />
+  <meta property="og:description" content="Interactive time series forecasting dashboard using LSTM to predict WTI crude oil prices." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://USERNAME.github.io/wti-forecast-dashboard/" />
+  <meta property="og:image" content="https://USERNAME.github.io/wti-forecast-dashboard/preview.png" />
+
+  <!-- SEO -->
+  <meta name="description" content="WTI oil price forecasting using LSTM and deep learning, deployed with Streamlit." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #38bdf8;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+    .card {
+      background: #020617;
+      padding: 25px;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 15px 25px;
+      background: #38bdf8;
+      color: #020617;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+    .btn:hover {
+      background: #0ea5e9;
+    }
+    .footer {
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>WTI Oil Price Forecast Dashboard</h1>
+
+    <p>
+      This project presents an <strong>interactive forecasting dashboard</strong>
+      for <strong>WTI crude oil prices</strong> using a deep learning approach
+      based on <strong>Long Short-Term Memory (LSTM)</strong>.
+    </p>
+
+    <div class="card">
+      <h2>Methodology</h2>
+      <ul>
+        <li>Time series forecasting using LSTM</li>
+        <li>Sliding window approach</li>
+        <li>Train-validation-test split</li>
+        <li>Evaluation using RMSE and MAE</li>
+      </ul>
+
+      <a
+        class="btn"
+        href="https://dashboard-forecast-wti-prices.streamlit.app/"
+        target="_blank"
+      >
+        Open Interactive Dashboard
+      </a>
+    </div>
+
+    <div class="footer">
+      © 2026 – Forecasting Project | Built with Python, LSTM, and Streamlit
+    </div>
+  </div>
+</body>
+</html>
