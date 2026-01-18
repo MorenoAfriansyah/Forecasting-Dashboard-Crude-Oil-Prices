@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>WTI Oil Price Forecast Dashboard</title>
+  <title>Dashboard Design Forecasting of Crude Oil Prices using Long Short Term Memory with Attention Mechanism</title>
 
   <!-- Open Graph (LinkedIn Preview) -->
   <meta property="og:title" content="WTI Crude Oil Price Forecast Dashboard" />
@@ -13,7 +13,7 @@
 
 
   <!-- SEO -->
-  <meta name="description" content="WTI oil price forecasting using LSTM and deep learning, deployed with Streamlit." />
+  <meta name="description" content="WTI oil price forecasting using LSTM and Attention Mechanism, deployed with Streamlit." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
@@ -70,17 +70,18 @@
 
     <p>
       This project presents an <strong>interactive forecasting dashboard</strong>
-      for <strong>WTI crude oil prices</strong> using a deep learning approach
-      based on <strong>Long Short-Term Memory (LSTM)</strong>.
+      for <strong>WTI crude oil prices</strong> using an advanced deep learning approach
+      based on <strong>Long Short-Term Memory (LSTM) with Attention Mechanism</strong>.
     </p>
 
     <div class="card">
       <h2>Methodology</h2>
       <ul>
-        <li>Time series forecasting using LSTM</li>
-        <li>Sliding window approach</li>
-        <li>Train-validation-test split</li>
-        <li>Evaluation using RMSE and MAE</li>
+        <li>Time series forecasting using LSTM with an attention mechanism</li>
+        <li>Multivariate inputs: WTI closing prices, US Dollar Index (USDX), and Geopolitical Risk Daily (GPRD) index</li>
+        <li>Feature selection based on ablation study results</li>
+        <li>Train–validation–test data splitting</li>
+        <li>Model evaluation using Mean Absolute Percentage Error (MAPE)</li>
       </ul>
 
       <a
@@ -98,4 +99,5 @@
   </div>
 </body>
 </html>
+
 
